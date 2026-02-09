@@ -19,6 +19,21 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add a country']
     },
+    phone: {
+        type: String,
+        default: ''
+    },
+    privacySettings: {
+        profileVisibility: {
+            type: String,
+            enum: ['public', 'private'],
+            default: 'public'
+        },
+        showEmail: {
+            type: Boolean,
+            default: false
+        }
+    },
     isVerified: {
         type: Boolean,
         default: false

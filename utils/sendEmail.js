@@ -1,10 +1,9 @@
 const nodemailer = require('nodemailer');
 
 const sendEmail = async (options) => {
-    // 1. Create Transporter (Using Gmail as example)
-    // You MUST add EMAIL_USER and EMAIL_PASS to .env
+    // 1. Create Transporter
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: 'gmail', // You can use other services or SMTP
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
